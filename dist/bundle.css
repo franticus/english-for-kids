@@ -1,0 +1,450 @@
+@charset "UTF-8";
+* {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto", Tahoma, sans-serif;
+  font-size: 20px;
+  margin: 0 auto;
+  text-align: center;
+  background: white;
+  background: linear-gradient(90deg, coral 0%, #ee3838 30%, #ee3838 70%, coral 100%);
+}
+
+h1 {
+  padding-left: 50px;
+  margin: 10px auto;
+  color: wheat;
+  max-width: 1280px;
+  cursor: pointer;
+}
+
+html header {
+  background: white;
+  background: linear-gradient(90deg, coral 0%, #ee3838 30%, #ee3838 70%, coral 100%);
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  border-bottom: 3px solid coral;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: coral;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px coral;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+
+.menu__btn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: wheat;
+}
+
+.menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: 0.25s;
+}
+
+.menu__box {
+  transition-duration: 0.25s;
+}
+
+.menu__item {
+  transition-duration: 0.25s;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  max-width: 1020px;
+  margin: 0 auto;
+  min-height: 60px;
+  align-items: center;
+}
+
+.navcontainer {
+  border-top: 3px solid coral;
+  background: rgba(255, 139, 97, 0.99);
+  color: black;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  padding: 20px 20px 0 50px;
+  max-width: 350px;
+  width: 55%;
+  height: 82vh;
+  scrollbar-track-color: #e20909;
+  left: -100%;
+  transition: all 0.7s cubic-bezier(0.86, -0.1, 0, 0.43);
+  z-index: 999;
+  padding-bottom: 25vh;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.16), 0 3px 10px 0 rgba(0, 0, 0, 0.527);
+}
+
+.navopen {
+  left: 0;
+}
+
+.navcontainer li {
+  border-radius: 20px;
+  list-style-type: none;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  padding-left: 10px;
+  transition-duration: 0.3s;
+  z-index: 999;
+}
+
+.navcontainer li:hover {
+  cursor: pointer;
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.7);
+}
+
+.nav__title {
+  color: white;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.fliped {
+  transform: rotateY(180deg);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.bottom {
+  position: absolute;
+  top: 0;
+  height: 131%;
+  width: 100%;
+  color: black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  background: #ffc592;
+  background: linear-gradient(180deg, rgba(244, 148, 141, 0.1) 0%, rgba(192, 118, 95, 0.2) 70%, #ffc592 80%, #ffc592 100%);
+  border-radius: 10px;
+  transition-duration: 0.5s;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  cursor: pointer;
+  margin: 20px 10px;
+  background-color: transparent;
+  width: 300px;
+  height: 250px;
+  perspective: 1000px;
+  transition-duration: 0.3s;
+}
+.flip-card:hover {
+  transform: translateY(-10px);
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  box-shadow: 0 5px 20px 0 rgba(31, 29, 29, 0.5);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  border-radius: 20px;
+  position: absolute;
+  width: 100%;
+  height: 71%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+}
+
+.mode-title {
+  position: absolute;
+  right: 0px;
+  top: 3px;
+  margin-right: 5px;
+  color: wheat;
+}
+
+.switch {
+  position: relative;
+}
+
+.curr-page {
+  padding: 0 0 5px 0;
+  margin: 0;
+  color: wheat;
+}
+
+@keyframes click-wave {
+  0% {
+    height: 20px;
+    width: 20px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  transition: all 0.15s ease-out 0s;
+  background: wheat;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 500;
+  border-radius: 10px;
+  transition-duration: 0.5s;
+}
+
+.option-input:hover {
+  background: #8eff8e;
+}
+
+.option-input:checked {
+  background: #569405;
+}
+
+.option-input:checked::before {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: -10px;
+  content: "✔";
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.option-input:checked::after {
+  border-radius: 50%;
+  -webkit-animation: click-wave 0.35s;
+  -moz-animation: click-wave 0.35s;
+  animation: click-wave 0.35s;
+  background: #00ff4c;
+  content: "";
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
+.menu-bg {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 90;
+}
+
+.score-board {
+  cursor: pointer;
+  font-size: 24px;
+  display: none;
+  padding: 0;
+  background-color: rgba(248, 225, 183, 0);
+  height: 100%;
+  max-width: 30%;
+  margin: 0 auto;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+.word-board {
+  cursor: pointer;
+  font-size: 24px;
+  border-top: 1px dashed coral;
+  display: none;
+  padding: 0;
+  margin: 0 auto;
+  background-color: wheat;
+  height: 100%;
+  max-width: 30%;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+.wordsArrayHide {
+  display: none;
+}
+
+.mode-hide {
+  opacity: 0;
+  width: 100px;
+  height: 50px;
+  background: gray;
+  position: absolute;
+  z-index: 999;
+  right: 450px;
+}

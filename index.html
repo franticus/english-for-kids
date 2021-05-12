@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English for Kids</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./dist/bundle.css" />
+  </head>
+
+  <body>
+
+    <div class="mode-hide"></div>
+
+    <header>
+      <div class="header__container">
+        <div class="nav__button">
+          <input id="menu__toggle" type="checkbox"/>
+          <label class="menu__btn" for="menu__toggle">
+            <span></span>
+          </label>
+        </div>
+        <h1 class="title">English for Kids</h1>
+        <div class="switch">
+          <span class="mode-title">Train</span>
+        </div>
+        <input id="checkbox" class="option-input checkbox" name="mode" type="checkbox">
+      </div>
+
+
+      <ul class="navcontainer">
+        <!-- <li class="nav__title">Choose category</li> -->
+        <li class="active">
+          <a data-category="0" class="nav__link">Main page</a>
+        </li>
+        <li class="li">
+          <a data-category="1" class="nav__link">Actions (set A)</a>
+        </li>
+        <li class="li">
+          <a data-category="2" class="nav__link">Actions (set B)</a>
+        </li>
+        <li class="li">
+          <a data-category="3" class="nav__link">Animals (set A)</a>
+        </li>
+        <li class="li">
+          <a data-category="4" class="nav__link">Animals (set B)</a>
+        </li>
+        <li class="li">
+          <a data-category="5" class="nav__link">Clothes</a>
+        </li>
+        <li class="li">
+          <a data-category="6" class="nav__link">Emotions</a>
+        </li>
+        <li class="li">
+          <a data-category="7" class="nav__link">Adjective</a>
+        </li>
+        <li class="li">
+          <a data-category="8" class="nav__link">Actions (set C)</a>
+        </li>
+        <li class="li">
+          <a data-category="1000" class="nav__statistics">Statistic</a>
+        </li>
+      </ul>
+    </header>
+
+    <div class="menu-bg"></div>
+
+
+    <h1>English for Kids</h1>
+    <h2></h2>
+
+    <h3 class="curr-page">Main page</h3>
+    <!-- <div class="score-board">&#128570;&#128575; &#9728;&#9729; &#9996;&#10060; &#10133;&#10134; &#128516;&#128566; &#128585;&#128584;</div> -->
+    <div class="score-board"></div>
+    <div class="word-board"></div>
+    <div class="wordsArrayHide"></div>
+
+
+    <section class="container">
+      <div id="1" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Название категории 1</span>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Перевод</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="2" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Название категории 2</span>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Перевод</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="3" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Название категории 3</span>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Перевод</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="4" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Название категории 4</span>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Перевод</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="5" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Название категории 5</span>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Перевод</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="6" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Название категории 6</span>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Перевод</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="7" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Название категории 7</span>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Перевод</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="8" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Название категории 8</span>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="top"></div>
+            <div class="bottom">
+              <span>Перевод</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Down text is javascript -->
+    <!-- <script src="./card.js"></script> -->
+    <script src="./dist/bundle.js"></script>
+  </body>
+</html>
